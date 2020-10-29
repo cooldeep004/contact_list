@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+    
+    <script src="https://kit.fontawesome.com/41c8fb69c7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id=container>
+        <h1>
+            Contact List
+        </h1>
+        <form id="form-data" action="./create" method="POST">
+            <div id="c1">
+                <!-- <label for="name" id="f1">Name</label> <br>-->
+                <input type="text" id="name" name="name" placeholder="name" required>
+            </div>
+            <div id="c2">
+                <!--<label for="number" id="f2">Number</label> <br> -->
+                <input type="text" id="number" name="number" placeholder="number" required>
+            </div>
+            <button id="add" value="Add Number"><i class="fas fa-plus"></i> Add Number</button>
+        </form>
+        <% for(let i of contact){%>
+        <div id="container1">
+            <div>
+                <p id="sname"><%=i.name%></p>
+
+                <p id="snumber"><%=i.number%></p>
+            </div>
+
+            <div id="delete-button-div" value="<%=i._id%>">
+                <button id="delete-button" value="<%=i._id%>"><i class="fas fa-trash" id="trash"></i></button>
+            </div>
+        </div>
+        <% }%>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
